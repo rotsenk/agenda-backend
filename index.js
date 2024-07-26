@@ -7,6 +7,10 @@ const app = express();// express como una función
 // directorio público
 app.use( express.static('public') );
 
+// leer y parsear el body, por medio del middleware "use"
+app.use( express.json() );
+
+
 // rutas
 app.use( '/api/auth', require('./routes/auth') );
 // todo: CRUD: Eventos

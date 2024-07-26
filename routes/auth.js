@@ -11,10 +11,10 @@ const { crearUsuario, loginUsuario, revalidarToken } = require('../controllers/a
 // para nuevos usuarios
 router.post( '/new', crearUsuario );
 
-// posteo directo al /auth
+// posteo directo al /auth para login
 router.post( '/', loginUsuario );
 
-// del token autenticar de forma pasova
+// del token autenticar de forma pasiva
 router.get( '/renew', revalidarToken );
 
 
