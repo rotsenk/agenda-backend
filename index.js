@@ -8,12 +8,8 @@ const app = express();// express como una función
 app.use( express.static('public') );
 
 // rutas
-// app.get('/', (req, res) => {
-//     res.json({
-//         ok: true
-//     })
-// });
-
+app.use( '/api/auth', require('./routes/auth') );
+// todo: CRUD: Eventos
 
 // escuchar peticiones
 // no poner puerto 3000, sino diferente 3001, 4000
