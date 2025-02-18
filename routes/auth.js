@@ -7,7 +7,8 @@ const { check } = require('express-validator');
 const router = Router();
 
 const { crearUsuario, loginUsuario, revalidarToken } = require('../controllers/auth');
-const { validarCampos } = require('../middlewares/validar-campos');
+const { validarCampos } = require('../middlewares/validar-campos'); 
+const { validarJWT } = require('../middlewares/validar-jwt');
 
 // e n d p o i n t s
 // para nuevos usuarios
@@ -34,7 +35,7 @@ router.post(
 );
 
 // del token autenticar de forma pasiva
-router.get('/renew', revalidarToken);
+router.get('/renew', validarJWT, revalidarToken);// como sólo será un middleware será así, si son dos o más debe ser arreglo
 
 
 module.exports = router;
