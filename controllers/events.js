@@ -17,7 +17,7 @@ const crearEvento = async (req, res = response) => {
 
     try {
         evento.user = req.uid;
-        // grabar en la base de datos
+        // grabar en la base de datos el evento guardado
         const eventoGuardado = await evento.save();
 
         res.json({
